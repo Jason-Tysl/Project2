@@ -2,7 +2,9 @@
 class Main {
 	public static void main(String[] args) {
 		// Initialize the scanner with the input file.
-		Scanner mainScanner = new Scanner(args[0]);
+		// Scanner mainScanner = new Scanner(args[0]);
+
+		Scanner mainScanner = new Scanner("TestCode.code");
 
 		// Initialize the Parser with the new scanner.
 		Parser.scanner = mainScanner;
@@ -19,6 +21,5 @@ class Main {
 		// Use recursive descent to print the Core program from the parse tree.
 		parseTree.print();
 		
-		// Parser.printHello(args[0]);
 	}
 }

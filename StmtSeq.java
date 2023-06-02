@@ -4,7 +4,8 @@ public class StmtSeq {
     StmtSeq stmtSeq;
 
     void parse(Scanner scanner) {
-
+        
+        scanner.nextToken();
     }
 
     void semantic() {

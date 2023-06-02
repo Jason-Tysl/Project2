@@ -4,6 +4,8 @@ public class Assign {
     Id id;
     Index index;
     Expr expr;
+    Id leftId;
+    Id rightId;
 
     void parse(Scanner scanner) {
 

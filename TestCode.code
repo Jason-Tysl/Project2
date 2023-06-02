@@ -1,0 +1,5 @@
+procedure testCode is
+    integer testInt;
+begin
+    testInt := 5;
+end

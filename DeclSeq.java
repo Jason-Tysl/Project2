@@ -5,6 +5,7 @@ public class DeclSeq {
 
     void parse(Scanner scanner) {
 
+        scanner.nextToken();
     }
 
     void semantic() {
