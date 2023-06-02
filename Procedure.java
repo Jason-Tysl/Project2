@@ -10,14 +10,14 @@ public class Procedure {
         Core currentToken = scanner.currentToken();
 
         if (currentToken != Core.PROCEDURE) {
-            System.out.println("Error: Expected \"PROCEDURE\" token, got: " + currentToken.toString());
+            System.out.println("ERROR: Expected \"PROCEDURE\" token, got: " + currentToken.toString());
             System.exit(0);
         }
         scanner.nextToken();
         currentToken = scanner.currentToken();
 
         if (currentToken != Core.ID) {
-            System.out.println("Error: Expected \"ID\" token, got: " + currentToken.toString());
+            System.out.println("ERROR: Expected \"ID\" token, got: " + currentToken.toString());
             System.exit(0);
         }
 
@@ -27,7 +27,7 @@ public class Procedure {
         currentToken = scanner.currentToken();
 
         if (currentToken != Core.IS) {
-            System.out.println("Error: Expected \"IS\" token, got: " + currentToken.toString());
+            System.out.println("ERROR: Expected \"IS\" token, got: " + currentToken.toString());
             System.exit(0);
         }
 
@@ -41,9 +41,11 @@ public class Procedure {
             declSeq.parse(scanner);
         }
 
-        // next token goes towards stmt-seq
+        // scanner should be on Begin now        
         scanner.nextToken();
         currentToken = scanner.currentToken();
+
+        // current token is now first part of stmtSeq
 
         stmtSeq = new StmtSeq();
         stmtSeq.parse(scanner);
@@ -52,7 +54,7 @@ public class Procedure {
         currentToken = scanner.currentToken();
 
         if (currentToken != Core.END) {
-            System.out.println("Expected \"END\" token, got: " + currentToken.toString());
+            System.out.println("ERROR: Expected \"END\" token, got: " + currentToken.toString());
             System.exit(0);
         }
 
@@ -60,7 +62,7 @@ public class Procedure {
         currentToken = scanner.currentToken();
 
         if (currentToken != Core.EOS) {
-            System.out.println("Expected \"EOS\" token, got: " + currentToken.toString());
+            System.out.println("ERROR: Expected \"EOS\" token, got: " + currentToken.toString());
             System.exit(0);
         }
     }

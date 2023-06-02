@@ -8,7 +8,7 @@ public class Assign {
     Id rightId;
 
     void parse(Scanner scanner) {
-
+        
     }
 
     void semantic() {
