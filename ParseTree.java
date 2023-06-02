@@ -1,10 +1,11 @@
 
 public class ParseTree {
 
-    public void parse() {
+    public void parse(Scanner parseScanner) {
+        
     }
 
-    public void semantic() {
+    public void semanticCheck() {
     }
 
     public void print() {
