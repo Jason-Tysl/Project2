@@ -1,7 +1,7 @@
-public class Out {
+public class Id {
     
-    // Add fields for each child the Out node could have
-    Expr expr;
+    // Add a field for the id
+    String id;
 
     void parse(Scanner scanner) {
 
