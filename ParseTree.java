@@ -1,10 +1,9 @@
 import java.util.HashMap;
-import java.util.Map;
 
 public class ParseTree {
 
 
-    HashMap<String, Integer> mapOfIds;
+    public static HashMap<String, Integer> mapOfIds = new HashMap<String, Integer>();
 
     public void parse(Scanner parseScanner) {
         Procedure.parse(parseScanner);

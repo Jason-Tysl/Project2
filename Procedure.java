@@ -10,15 +10,15 @@ public class Procedure {
         Core currentToken = scanner.currentToken();
 
         if (currentToken != Core.PROCEDURE) {
-            System.out.println("Expected \"Procedure\" token, got: " + currentToken.toString());
-            return;
+            System.out.println("Error: Expected \"PROCEDURE\" token, got: " + currentToken.toString());
+            System.exit(0);
         }
         scanner.nextToken();
         currentToken = scanner.currentToken();
 
         if (currentToken != Core.ID) {
-            System.out.println("Expected \"ID\" token, got: " + currentToken.toString());
-            return;
+            System.out.println("Error: Expected \"ID\" token, got: " + currentToken.toString());
+            System.exit(0);
         }
 
         id = scanner.getId();
@@ -27,8 +27,8 @@ public class Procedure {
         currentToken = scanner.currentToken();
 
         if (currentToken != Core.IS) {
-            System.out.println("Expected \"IS\" token, got: " + currentToken.toString());
-            return;
+            System.out.println("Error: Expected \"IS\" token, got: " + currentToken.toString());
+            System.exit(0);
         }
 
         scanner.nextToken();
@@ -36,20 +36,24 @@ public class Procedure {
 
         if (currentToken != Core.BEGIN) {
             // Assume it's a decl-seq
+            declSeq = new DeclSeq();
             // declSeq.parse() iterates to the next token so we don't need to call it again
             declSeq.parse(scanner);
         }
 
+        // next token goes towards stmt-seq
+        scanner.nextToken();
         currentToken = scanner.currentToken();
-        
-        // stmtSeq.parse() iterates to the next token so we don't need to call it again
+
+        stmtSeq = new StmtSeq();
         stmtSeq.parse(scanner);
+        // stmtSeq.parse() iterates to the next token so we don't need to call it again
 
         currentToken = scanner.currentToken();
 
         if (currentToken != Core.END) {
             System.out.println("Expected \"END\" token, got: " + currentToken.toString());
-            return;
+            System.exit(0);
         }
 
         scanner.nextToken();
@@ -57,7 +61,7 @@ public class Procedure {
 
         if (currentToken != Core.EOS) {
             System.out.println("Expected \"EOS\" token, got: " + currentToken.toString());
-            return;
+            System.exit(0);
         }
     }
 
