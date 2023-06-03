@@ -16,9 +16,4 @@ public class Parser {
 
     
 
-
-    public static void printHello(String str) {
-        System.out.println(str);
-    }
-
 }

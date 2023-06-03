@@ -75,7 +75,13 @@ public class Procedure {
     }
 
     void print() {
-        System.out.println("Successful");
+        System.out.println("procedure " + id + " is");
+        if (declSeq != null) {
+            declSeq.print();
+        }
+        System.out.println("begin");
+        stmtSeq.print();
+        System.out.println("end");
     }
 
 }
