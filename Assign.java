@@ -71,6 +71,10 @@ public class Assign {
             System.exit(0);
         }
 
+        // give them token after semicolon
+        scanner.nextToken();
+
+        
         // Don't know if we have to handle setting id to something else
         // here or if the parsing took care of it?
     }
