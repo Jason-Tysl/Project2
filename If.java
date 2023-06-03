@@ -18,17 +18,18 @@ public class If {
 
         currentToken = scanner.currentToken();
 
-        if (currentToken == Core.END) {
-            scanner.nextToken();
-        } else if (currentToken == Core.ELSE) {
+        if (currentToken == Core.ELSE) {
             scanner.nextToken();
             stmtSeq = new StmtSeq();
             stmtSeq.parse(scanner);
-        } else {
+        }
+
+        if (currentToken != Core.END) {
             System.out.println("ERROR: Expected \"END\" or \"ELSE\" token, got: " + currentToken.toString());
             System.exit(0);
         }
 
+        scanner.nextToken();
         
     }
 
