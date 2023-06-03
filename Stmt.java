@@ -26,7 +26,7 @@ public class Stmt {
             decl = new Decl();
             decl.parse(scanner);
         } else {
-            System.out.println("ERROR: Expected Stmt child token, got: " + currentToken.toString());
+            System.out.println("ERROR: Expected Stmt child token in Stmt.java, got: " + currentToken.toString());
             System.exit(0);
         }
     }

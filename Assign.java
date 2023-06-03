@@ -26,7 +26,7 @@ public class Assign {
             currentToken = scanner.currentToken();
             
         } else {
-            System.out.println("ERROR: Expected \"ASSIGN\" token, got: " + currentToken.toString());
+            System.out.println("ERROR: Expected \"ASSIGN\" token in Assign.java, got: " + currentToken.toString());
             System.exit(0);
         }
 
@@ -37,7 +37,7 @@ public class Assign {
             scanner.nextToken(); // token will be LBRACE
             currentToken = scanner.currentToken();
             if (currentToken != Core.LBRACE) {
-                System.out.println("ERROR: Expected \"LBRACE\" token, got: " + currentToken.toString());
+                System.out.println("ERROR: Expected \"LBRACE\" token in Assign.java, got: " + currentToken.toString());
                 System.exit(0);
             }
             scanner.nextToken(); // token will be <expr>
@@ -46,7 +46,7 @@ public class Assign {
 
             currentToken = scanner.currentToken();
             if (currentToken != Core.RBRACE) {
-                System.out.println("ERROR: Expected \"RBRACE\" token, got: " + currentToken.toString());
+                System.out.println("ERROR: Expected \"RBRACE\" token in Assign.java, got: " + currentToken.toString());
                 System.exit(0);
             }
 
@@ -68,7 +68,7 @@ public class Assign {
 
         currentToken = scanner.currentToken(); //token is semicolon
         if (currentToken != Core.SEMICOLON) {
-            System.out.println("ERROR: Expected \"SEMICOLON\" token, got: " + currentToken.toString());
+            System.out.println("ERROR: Expected \"SEMICOLON\" token in Assign.java, got: " + currentToken.toString());
             System.exit(0);
         }
 

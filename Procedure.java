@@ -10,14 +10,14 @@ public class Procedure {
         Core currentToken = scanner.currentToken();
 
         if (currentToken != Core.PROCEDURE) {
-            System.out.println("ERROR: Expected \"PROCEDURE\" token, got: " + currentToken.toString());
+            System.out.println("ERROR: Expected \"PROCEDURE\" token in Procedure.java, got: " + currentToken.toString());
             System.exit(0);
         }
         scanner.nextToken();
         currentToken = scanner.currentToken();
 
         if (currentToken != Core.ID) {
-            System.out.println("ERROR: Expected \"ID\" token, got: " + currentToken.toString());
+            System.out.println("ERROR: Expected \"ID\" token in Procedure.java, got: " + currentToken.toString());
             System.exit(0);
         }
 
@@ -27,7 +27,7 @@ public class Procedure {
         currentToken = scanner.currentToken();
 
         if (currentToken != Core.IS) {
-            System.out.println("ERROR: Expected \"IS\" token, got: " + currentToken.toString());
+            System.out.println("ERROR: Expected \"IS\" token in Procedure.java, got: " + currentToken.toString());
             System.exit(0);
         }
 
@@ -54,7 +54,7 @@ public class Procedure {
         currentToken = scanner.currentToken();
 
         if (currentToken != Core.END) {
-            System.out.println("ERROR: Expected \"END\" token, got: " + currentToken.toString());
+            System.out.println("ERROR: Expected \"END\" token in Procedure.java, got: " + currentToken.toString());
             System.exit(0);
         }
 
@@ -62,7 +62,7 @@ public class Procedure {
         currentToken = scanner.currentToken();
 
         if (currentToken != Core.EOS) {
-            System.out.println("ERROR: Expected \"EOS\" token, got: " + currentToken.toString());
+            System.out.println("ERROR: Expected \"EOS\" token in Procedure.java, got: " + currentToken.toString());
             System.exit(0);
         }
     }

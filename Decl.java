@@ -16,7 +16,7 @@ public class Decl {
             scanner.nextToken();
             declRecord.parse(scanner);
         } else {
-            System.out.println("ERROR: Expected Decl child token, got: " + currentToken.toString());
+            System.out.println("ERROR: Expected Decl child token in Decl.java, got: " + currentToken.toString());
             System.exit(0);
         }
     }

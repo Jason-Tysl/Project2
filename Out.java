@@ -9,7 +9,7 @@ public class Out {
         scanner.nextToken();
         currentToken = scanner.currentToken();
         if (currentToken != Core.LPAREN) {
-            System.out.println("ERROR: Expected \"LPAREN\" token, got: " + currentToken.toString());
+            System.out.println("ERROR: Expected \"LPAREN\" token in Out.java, got: " + currentToken.toString());
             System.exit(0);
         }
 
@@ -21,14 +21,14 @@ public class Out {
 
         currentToken = scanner.currentToken();
         if (currentToken != Core.RPAREN) {
-            System.out.println("ERROR: Expected \"RPAREN\" token, got: " + currentToken.toString());
+            System.out.println("ERROR: Expected \"RPAREN\" token in Out.java, got: " + currentToken.toString());
             System.exit(0);
         }
 
         scanner.nextToken();
         currentToken = scanner.currentToken();
         if (currentToken != Core.SEMICOLON) {
-            System.out.println("ERROR: Expected \"SEMICOLON\" token, got: " + currentToken.toString());
+            System.out.println("ERROR: Expected \"SEMICOLON\" token in Out.java, got: " + currentToken.toString());
             System.exit(0);
         }
         scanner.nextToken();

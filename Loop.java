@@ -13,7 +13,7 @@ public class Loop {
 
         currentToken = scanner.currentToken();
         if (currentToken != Core.DO) {
-            System.out.println("ERROR: Expected \"DO\" token, got: " + currentToken.toString());
+            System.out.println("ERROR: Expected \"DO\" token in Loop.java, got: " + currentToken.toString());
             System.exit(0);
         }
 
@@ -23,7 +23,7 @@ public class Loop {
         stmtSeq.parse(scanner);
         
         if (currentToken != Core.END) {
-            System.out.println("ERROR: Expected \"END\" token, got: " + currentToken.toString());
+            System.out.println("ERROR: Expected \"END\" token in Loop.java, got: " + currentToken.toString());
             System.exit(0);
         }
 
