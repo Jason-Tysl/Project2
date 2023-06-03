@@ -1,10 +1,11 @@
 public class DeclRecord {
 
     // Add fields for each child the DeclRecord node could have
-    Id id;
+    String id;
 
     void parse(Scanner scanner) {
-        Procedure.mapOfIds.put(scanner.getId(), null);
+        id = scanner.getId();
+        Procedure.mapOfIds.put(id, null);
         scanner.nextToken();
         Core currentToken = scanner.currentToken();
         if (currentToken != Core.SEMICOLON) {
@@ -19,7 +20,7 @@ public class DeclRecord {
     }
 
     void print() {
-        
+        System.out.println("record " + id + ";");
     }
 
 }

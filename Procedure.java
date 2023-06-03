@@ -71,7 +71,7 @@ public class Procedure {
     }
 
     void semantic() {
-
+        
     }
 
     void print() {

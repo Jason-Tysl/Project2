@@ -26,7 +26,11 @@ public class Decl {
     }
 
     void print() {
-        
+        if (declInteger != null) {
+            declInteger.print();
+        } else {
+            declRecord.print();
+        }
     }
 
 }

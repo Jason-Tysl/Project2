@@ -25,7 +25,10 @@ public class DeclSeq {
     }
 
     void print() {
-        
+        decl.print();
+        if (declSeq != null) {
+            declSeq.print();
+        }
     }
 
 }

@@ -27,7 +27,10 @@ public class StmtSeq {
     }
 
     void print() {
-        
+        stmt.print();
+        if (stmtSeq != null) {
+            stmtSeq.print();
+        }
     }
 
 }

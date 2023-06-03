@@ -1,11 +1,12 @@
 public class DeclInteger {
     
     // Add fields for each child the DeclInteger node could have
-    Id id;
+    String id;
     int idInt;
 
     void parse(Scanner scanner) {
-        Procedure.mapOfIds.put(scanner.getId(), null);
+        id = scanner.getId();
+        Procedure.mapOfIds.put(id, null);
         scanner.nextToken();
         Core currentToken = scanner.currentToken();
         if (currentToken != Core.SEMICOLON) {
@@ -20,7 +21,7 @@ public class DeclInteger {
     }
 
     void print() {
-        
+        System.out.println("integer " + id + ";");
     }
 
 }
