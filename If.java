@@ -3,6 +3,7 @@ public class If {
     // Add fields for each child the If node could have
     Cond cond;
     StmtSeq stmtSeq;
+    StmtSeq secondStmtSeq;
 
     void parse(Scanner scanner) {
         scanner.nextToken();
@@ -20,8 +21,8 @@ public class If {
 
         if (currentToken == Core.ELSE) {
             scanner.nextToken();
-            stmtSeq = new StmtSeq();
-            stmtSeq.parse(scanner);
+            secondStmtSeq = new StmtSeq();
+            secondStmtSeq.parse(scanner);
         }
 
         if (currentToken != Core.END) {
@@ -37,8 +38,22 @@ public class If {
 
     }
 
-    void print() {
-        
+    void print(int numOfIndentations) {
+        for (int i = 0; i < numOfIndentations; i++) {
+            System.out.print("\t");
+        }
+        System.out.print("if ");
+        cond.print();
+        System.out.println(" then");
+        stmtSeq.print(numOfIndentations + 1);
+        if (secondStmtSeq != null) {
+            System.out.println("else");
+            secondStmtSeq.print(numOfIndentations);
+        }
+        for (int i = 0; i < numOfIndentations; i++) {
+            System.out.print("\t");
+        }
+        System.out.println("end");
     }
 
 }

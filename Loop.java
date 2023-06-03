@@ -33,7 +33,7 @@ public class Loop {
 
     }
 
-    void print() {
+    void print(int numOfIndentations) {
         
     }
 

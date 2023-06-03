@@ -2,5 +2,7 @@ procedure testCode is
     integer testInt;
     record testRec;
 begin
-    testInt := 5 + 2;
+    if 0 = 0 then
+        testInt := 5 + 2;
+    end
 end

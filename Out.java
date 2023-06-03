@@ -39,7 +39,7 @@ public class Out {
 
     }
 
-    void print() {
+    void print(int numOfIndentations) {
         
     }
 

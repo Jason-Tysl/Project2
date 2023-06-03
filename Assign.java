@@ -5,13 +5,18 @@ public class Assign {
     Index index;
     Expr expr;
     String rightId;
+    assignmentType assignType;
+
+    enum assignmentType {
+        BASE, NEW, RECORD
+    }
 
     void parse(Scanner scanner) {
         Core currentToken = scanner.currentToken();
         id = scanner.getId();
         scanner.nextToken();
         currentToken = scanner.currentToken();
-
+        
         // current token will either be LBRACE for <index> or ASSIGN
         if (currentToken == Core.LBRACE) {
             index = new Index();
@@ -32,6 +37,7 @@ public class Assign {
 
         // token after ASSIGN: <expr>, new, or record
         if (currentToken == Core.NEW) {
+            assignType = assignmentType.NEW;
             scanner.nextToken(); // token will be RECORD
             scanner.nextToken(); // token will be LBRACE
             currentToken = scanner.currentToken();
@@ -52,6 +58,7 @@ public class Assign {
             scanner.nextToken(); 
 
         } else if (currentToken == Core.RECORD) {
+            assignType = assignmentType.RECORD;
             scanner.nextToken(); 
             currentToken = scanner.currentToken(); // token is id
             rightId = scanner.getId();
@@ -60,6 +67,7 @@ public class Assign {
             scanner.nextToken(); 
         } else {
             // <expr>
+            assignType = assignmentType.BASE;
             expr = new Expr();
             expr.parse(scanner);
 
@@ -83,8 +91,27 @@ public class Assign {
 
     }
 
-    void print() {
-        
+    void print(int numOfIndentations) {
+        for (int i = 0; i < numOfIndentations; i++) {
+            System.out.print("\t");
+        }
+        System.out.print(id);
+
+        if (assignType == assignmentType.BASE) {
+            if (index != null) {
+                index.print();
+            }
+            System.out.print(" := ");
+            expr.print();
+            System.out.println(";");
+        } else if (assignType == assignmentType.NEW) {
+            System.out.print(" := new record [");
+            expr.print();
+            System.out.println(" ];");
+        } else if (assignType == assignmentType.RECORD) {
+            System.out.println(":= record " + rightId + ";");
+        }
+
     }
 
 }
