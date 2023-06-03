@@ -8,7 +8,9 @@ public class Assign {
     Id rightId;
 
     void parse(Scanner scanner) {
+        Core currentToken = scanner.currentToken();
         
+        ParseTree.mapOfIds.get("");
     }
 
     void semantic() {
