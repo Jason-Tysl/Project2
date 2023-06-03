@@ -12,6 +12,8 @@ public class Out {
             System.out.println("ERROR: Expected \"LPAREN\" token, got: " + currentToken.toString());
             System.exit(0);
         }
+
+        // after '(' it will be the expr token
         scanner.nextToken();
         expr = new Expr();
         expr.parse(scanner);
