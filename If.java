@@ -25,7 +25,7 @@ public class If {
         }
 
         if (currentToken != Core.END) {
-            System.out.println("ERROR: Expected \"END\" token, got: " + currentToken.toString());
+            System.out.println("ERROR: Expected \"END\" token in If.java, got: " + currentToken.toString());
             System.exit(0);
         }
 

@@ -8,7 +8,7 @@ public class DeclRecord {
         scanner.nextToken();
         Core currentToken = scanner.currentToken();
         if (currentToken != Core.SEMICOLON) {
-            System.out.println("Expected \"SEMICOLON\" token, got: " + currentToken.toString());
+            System.out.println("Expected \"SEMICOLON\" token in DeclRecord.java, got: " + currentToken.toString());
             System.exit(0);
         }
         scanner.nextToken();
