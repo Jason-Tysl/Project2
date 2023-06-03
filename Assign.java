@@ -4,7 +4,6 @@ public class Assign {
     String id;
     Index index;
     Expr expr;
-    Id leftId;
     String rightId;
 
     void parse(Scanner scanner) {
