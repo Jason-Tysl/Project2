@@ -35,7 +35,7 @@ public class Stmt {
 
     }
 
-    void print() {
+    void print(int numOfIndentations) {
         
     }
 

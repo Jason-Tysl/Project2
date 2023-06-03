@@ -24,10 +24,10 @@ public class DeclSeq {
 
     }
 
-    void print() {
-        decl.print();
+    void print(int numOfIndentations) {
+        decl.print(numOfIndentations);
         if (declSeq != null) {
-            declSeq.print();
+            declSeq.print(numOfIndentations);
         }
     }
 

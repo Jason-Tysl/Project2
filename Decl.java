@@ -25,11 +25,11 @@ public class Decl {
 
     }
 
-    void print() {
+    void print(int numOfIndentations) {
         if (declInteger != null) {
-            declInteger.print();
+            declInteger.print(numOfIndentations);
         } else {
-            declRecord.print();
+            declRecord.print(numOfIndentations);
         }
     }
 

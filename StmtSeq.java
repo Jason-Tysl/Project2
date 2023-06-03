@@ -26,10 +26,10 @@ public class StmtSeq {
 
     }
 
-    void print() {
-        stmt.print();
+    void print(int numOfIndentations) {
+        stmt.print(numOfIndentations);
         if (stmtSeq != null) {
-            stmtSeq.print();
+            stmtSeq.print(numOfIndentations);
         }
     }
 

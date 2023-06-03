@@ -9,7 +9,7 @@ public class Procedure {
 
     public static HashMap<String, Integer> mapOfIds = new HashMap<String, Integer>();
     
-    void parse(Scanner scanner) {
+    static void parse(Scanner scanner) {
         Core currentToken = scanner.currentToken();
 
         if (currentToken != Core.PROCEDURE) {
@@ -71,16 +71,17 @@ public class Procedure {
     }
 
     void semantic() {
-        
+
     }
 
     void print() {
         System.out.println("procedure " + id + " is");
+        int numOfIndentations = 1;
         if (declSeq != null) {
-            declSeq.print();
+            declSeq.print(numOfIndentations);
         }
         System.out.println("begin");
-        stmtSeq.print();
+        stmtSeq.print(numOfIndentations);
         System.out.println("end");
     }
 

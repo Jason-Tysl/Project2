@@ -19,7 +19,10 @@ public class DeclRecord {
 
     }
 
-    void print() {
+    void print(int numOfIndentations) {
+        for (int i = 0; i < numOfIndentations; i++) {
+            System.out.print("\t");
+        }
         System.out.println("record " + id + ";");
     }
 
