@@ -5,7 +5,7 @@ public class DeclInteger {
     int idInt;
 
     void parse(Scanner scanner) {
-        ParseTree.mapOfIds.put(scanner.getId(), null);
+        Procedure.mapOfIds.put(scanner.getId(), null);
         scanner.nextToken();
         Core currentToken = scanner.currentToken();
         if (currentToken != Core.SEMICOLON) {

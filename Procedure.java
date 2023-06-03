@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 public class Procedure {
     
     // Add fields for each child the Procedure node could have
@@ -5,8 +7,9 @@ public class Procedure {
     static StmtSeq stmtSeq;
     static String id;
 
-
-    static void parse(Scanner scanner) {
+    public static HashMap<String, Integer> mapOfIds = new HashMap<String, Integer>();
+    
+    void parse(Scanner scanner) {
         Core currentToken = scanner.currentToken();
 
         if (currentToken != Core.PROCEDURE) {
@@ -67,12 +70,12 @@ public class Procedure {
         }
     }
 
-    static void semantic() {
+    void semantic() {
 
     }
 
-    static void print() {
-        
+    void print() {
+        System.out.println("Successful");
     }
 
 }

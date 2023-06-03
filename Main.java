@@ -10,16 +10,20 @@ class Main {
 		Parser.scanner = mainScanner;
 
 		// Use the program class to create the start of a parse tree
-		ParseTree parseTree = new ParseTree();
+		// ParseTree parseTree = new ParseTree();
+		Procedure procedure = new Procedure();
 
 		// Generate a parse tree for the input Core program using recursive descent.
-		parseTree.parse(mainScanner);
+		// parseTree.parse(mainScanner);
+		procedure.parse(mainScanner);
 
 		// Perform semantic checks on the parse tree.
-		parseTree.semanticCheck();
+		// parseTree.semanticCheck();
+		procedure.semantic();
 
 		// Use recursive descent to print the Core program from the parse tree.
-		parseTree.print();
+		// parseTree.print();
+		procedure.print();
 		
 	}
 }

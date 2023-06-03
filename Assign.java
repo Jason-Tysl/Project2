@@ -55,8 +55,8 @@ public class Assign {
             scanner.nextToken(); 
             currentToken = scanner.currentToken(); // token is id
             rightId = scanner.getId();
-            int rightValue = ParseTree.mapOfIds.get(rightId);
-            ParseTree.mapOfIds.put(id, rightValue);
+            int rightValue = Procedure.mapOfIds.get(rightId);
+            Procedure.mapOfIds.put(id, rightValue);
             scanner.nextToken(); 
         } else {
             // <expr>
@@ -74,7 +74,7 @@ public class Assign {
         // give them token after semicolon
         scanner.nextToken();
 
-        
+
         // Don't know if we have to handle setting id to something else
         // here or if the parsing took care of it?
     }
