@@ -45,7 +45,19 @@ public class Cond {
     }
 
     void print() {
-        
+        if (condType == conditionType.NOT) {
+            System.out.print("not ");
+            cond.print();
+        } else {
+            cmpr.print();
+            if (condType == conditionType.OR) {
+                System.out.print(" or ");
+                cond.print();
+            } else if (condType == conditionType.AND) {
+                System.out.print(" and ");
+                cond.print();
+            }
+        }
     }
 
 }

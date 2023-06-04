@@ -40,7 +40,12 @@ public class Out {
     }
 
     void print(int numOfIndentations) {
-        
+        for (int i = 0; i < numOfIndentations; i++) {
+            System.out.print("\t");
+        }
+        System.out.print("out (");
+        expr.print();
+        System.out.println(");");
     }
 
 }

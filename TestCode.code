@@ -2,7 +2,12 @@ procedure testCode is
     integer testInt;
     record testRec;
 begin
-    if 0 = 0 then
-        testInt := 5 + 2;
-    end
+    while not x = y do
+		if x < y then
+			x := x + 2;
+		end
+		if not x < y or x = y then
+			y := y+1;
+		end
+	end
 end

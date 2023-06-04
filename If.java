@@ -47,6 +47,9 @@ public class If {
         System.out.println(" then");
         stmtSeq.print(numOfIndentations + 1);
         if (secondStmtSeq != null) {
+            for (int i = 0; i < numOfIndentations; i++) {
+                System.out.print("\t");
+            }
             System.out.println("else");
             secondStmtSeq.print(numOfIndentations);
         }

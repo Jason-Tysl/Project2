@@ -22,10 +22,11 @@ public class Loop {
         stmtSeq = new StmtSeq();
         stmtSeq.parse(scanner);
         
-        if (currentToken != Core.END) {
+        if (currentToken == Core.END) {
             System.out.println("ERROR: Expected \"END\" token in Loop.java, got: " + currentToken.toString());
             System.exit(0);
         }
+        scanner.nextToken();
 
     }
 
@@ -34,7 +35,18 @@ public class Loop {
     }
 
     void print(int numOfIndentations) {
-        
-    }
+        for (int i = 0; i < numOfIndentations; i++) {
+            System.out.print("\t");
+        }
+        System.out.print("while ");
+        cond.print();
+        System.out.println(" do");
+        stmtSeq.print(numOfIndentations + 1);
+        for (int i = 0; i < numOfIndentations; i++) {
+            System.out.print("\t");
+        }
+        System.out.println("end");
+
+    }   
 
 }
