@@ -67,6 +67,9 @@ public class Factor {
                 System.exit(0);
             }
             scanner.nextToken();
+        } else {
+            System.out.println("ERROR: Expected Factor production in Factor.java");
+            System.exit(0);
         }
     }
 

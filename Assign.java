@@ -126,7 +126,7 @@ public class Assign {
         } else if (assignType == assignmentType.NEW) {
             System.out.print(" := new record [");
             expr.print();
-            System.out.println(" ];");
+            System.out.println("];");
         } else if (assignType == assignmentType.RECORD) {
             System.out.println(":= record " + rightId + ";");
         }

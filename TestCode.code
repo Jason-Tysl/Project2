@@ -1,5 +1,5 @@
 procedure testCode is
-    integer x;
+    record x;
     record y;
 begin
     while not x = y do
