@@ -2,10 +2,11 @@
 class Main {
 	public static void main(String[] args) {
 		// Initialize the scanner with the input file.
-		Scanner mainScanner = new Scanner(args[0]);
+		// Scanner mainScanner = new Scanner(args[0]);
+		Scanner mainScanner = new Scanner("Correct/13.code");
 
 		// Initialize the Parser with the new scanner.
-		Parser.scanner = mainScanner;
+		Procedure.scanner = mainScanner;
 
 		// Use the program class to create the start of a parse tree
 		Procedure procedure = new Procedure();

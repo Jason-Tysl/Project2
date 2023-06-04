@@ -8,6 +8,7 @@ public class Procedure {
     static String id;
 
     public static HashMap<String, String> mapOfIds = new HashMap<String, String>();
+    public static Scanner scanner;
     
     static void parse(Scanner scanner) {
         Core currentToken = scanner.currentToken();
