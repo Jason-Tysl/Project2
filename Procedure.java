@@ -7,7 +7,7 @@ public class Procedure {
     static StmtSeq stmtSeq;
     static String id;
 
-    public static HashMap<String, Integer> mapOfIds = new HashMap<String, Integer>();
+    public static HashMap<String, String> mapOfIds = new HashMap<String, String>();
     
     static void parse(Scanner scanner) {
         Core currentToken = scanner.currentToken();

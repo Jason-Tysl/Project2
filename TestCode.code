@@ -1,6 +1,6 @@
 procedure testCode is
-    integer testInt;
-    record testRec;
+    integer x;
+    record y;
 begin
     while not x = y do
 		if x < y then
@@ -10,9 +10,11 @@ begin
 		if not x < y or x = y then
 			y := y-1;
             y := x[7];
+            x[2] := 9;
         else
             y := y * 8;
             y := in();
+            x := record 6;
 		end
         out (5);
 	end

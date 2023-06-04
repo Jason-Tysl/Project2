@@ -14,11 +14,13 @@ public class Assign {
     void parse(Scanner scanner) {
         Core currentToken = scanner.currentToken();
         id = scanner.getId();
+        checkIdDeclared();
         scanner.nextToken();
         currentToken = scanner.currentToken();
         
         // current token will either be LBRACE for <index> or ASSIGN
         if (currentToken == Core.LBRACE) {
+            checkIDRecord();
             index = new Index();
             index.parse(scanner);
             currentToken = scanner.currentToken();
@@ -38,6 +40,7 @@ public class Assign {
         // token after ASSIGN: <expr>, new, or record
         if (currentToken == Core.NEW) {
             assignType = assignmentType.NEW;
+            checkIDRecord();
             scanner.nextToken(); // token will be RECORD
             scanner.nextToken(); // token will be LBRACE
             currentToken = scanner.currentToken();
@@ -59,11 +62,12 @@ public class Assign {
 
         } else if (currentToken == Core.RECORD) {
             assignType = assignmentType.RECORD;
+            checkIDRecord();
             scanner.nextToken(); 
             currentToken = scanner.currentToken(); // token is id
             rightId = scanner.getId();
-            int rightValue = Procedure.mapOfIds.get(rightId);
-            Procedure.mapOfIds.put(id, rightValue);
+            // int rightValue = Procedure.mapOfIds.get(rightId);
+            // Procedure.mapOfIds.put(id, rightValue);
             scanner.nextToken(); 
         } else {
             // <expr>
@@ -85,6 +89,21 @@ public class Assign {
 
         // Don't know if we have to handle setting id to something else
         // here or if the parsing took care of it?
+    }
+
+    private void checkIDRecord() {
+        String intOrRec = Procedure.mapOfIds.get(id);
+        if (!intOrRec.equals("record")) {
+            System.out.println("SEMANTIC ERROR: id declared as integer, not record. id: " + id);
+            System.exit(0);
+        }
+    }
+
+    private void checkIdDeclared() {
+        if (!Procedure.mapOfIds.containsKey(id)) {
+            System.out.println("SEMANTIC ERROR: id not declared. id: " + id);
+            System.exit(0);
+        }
     }
 
     void semantic() {

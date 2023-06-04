@@ -24,6 +24,7 @@ public class Factor {
                 return;
             } else {
                 fType = factorType.ARRAY;
+                checkIDRecord();
                 scanner.nextToken();
                 expr = new Expr();
                 expr.parse(scanner);
@@ -66,6 +67,14 @@ public class Factor {
                 System.exit(0);
             }
             scanner.nextToken();
+        }
+    }
+
+    private void checkIDRecord() {
+        String intOrRec = Procedure.mapOfIds.get(id);
+        if (!intOrRec.equals("record")) {
+            System.out.println("SEMANTIC ERROR: id declared as integer, not record. id: " + id);
+            System.exit(0);
         }
     }
 

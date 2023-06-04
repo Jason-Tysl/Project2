@@ -33,7 +33,7 @@ public class Index {
     }
 
     void print() {
-        System.out.print(" [");
+        System.out.print("[");
         expr.print();
         System.out.print("]");
     }

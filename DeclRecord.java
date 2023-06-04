@@ -5,7 +5,8 @@ public class DeclRecord {
 
     void parse(Scanner scanner) {
         id = scanner.getId();
-        Procedure.mapOfIds.put(id, null);
+        doublyDeclaredCheck();
+        Procedure.mapOfIds.put(id, "record");
         scanner.nextToken();
         Core currentToken = scanner.currentToken();
         if (currentToken != Core.SEMICOLON) {
@@ -13,6 +14,13 @@ public class DeclRecord {
             System.exit(0);
         }
         scanner.nextToken();
+    }
+
+    private void doublyDeclaredCheck() {
+        if (Procedure.mapOfIds.containsKey(id)) {
+            System.out.println("SEMANTIC ERROR: id doubly declared. id: " + id);
+            System.exit(0);
+        }
     }
 
     void semantic() {
