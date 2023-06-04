@@ -52,6 +52,7 @@ public class Factor {
             }
             scanner.nextToken();
         } else if (currentToken == Core.IN) {
+            fType = factorType.IN;
             scanner.nextToken();
             currentToken = scanner.currentToken();
             if (currentToken != Core.LPAREN) {
@@ -73,7 +74,21 @@ public class Factor {
     }
 
     void print() {
-        
+        if (fType == factorType.ID) {
+            System.out.print(id);
+        } else if (fType == factorType.ARRAY) {
+            System.out.print(id + "[");
+            expr.print();
+            System.out.print("]");
+        } else if (fType == factorType.CONST) {
+            System.out.print(String.valueOf(constant));
+        } else if (fType == factorType.EXPR) {
+            System.out.print("(");
+            expr.print();
+            System.out.print(")");
+        } else if (fType == factorType.IN) {
+            System.out.print("in()");
+        }
     }
 
 }

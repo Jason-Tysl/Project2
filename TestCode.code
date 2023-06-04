@@ -9,6 +9,7 @@ begin
 		end
 		if not x < y or x = y then
 			y := y-1;
+            y := x[7];
         else
             y := y * 8;
             y := in();
