@@ -5,9 +5,14 @@ begin
     while not x = y do
 		if x < y then
 			x := x + 2;
+            x := y / 3;
 		end
 		if not x < y or x = y then
-			y := y+1;
+			y := y-1;
+        else
+            y := y * 8;
+            y := in();
 		end
+        out (5);
 	end
 end

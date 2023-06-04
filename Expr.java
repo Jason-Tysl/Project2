@@ -34,7 +34,14 @@ public class Expr {
     }
 
     void print() {
-        
+        term.print();
+        if (exprType == expressionType.ADD) {
+            System.out.print(" + ");
+            expr.print();
+        } else if (exprType == expressionType.SUBTRACT) {
+            System.out.print(" - ");
+            expr.print();
+        }
     }
 
 }

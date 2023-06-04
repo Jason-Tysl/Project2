@@ -53,15 +53,18 @@ public class Factor {
             scanner.nextToken();
         } else if (currentToken == Core.IN) {
             scanner.nextToken();
+            currentToken = scanner.currentToken();
             if (currentToken != Core.LPAREN) {
                 System.out.println("ERROR: Expected \"LPAREN\" token in Factor.java, got: " + currentToken.toString());
                 System.exit(0);
             }
             scanner.nextToken();
+            currentToken = scanner.currentToken();
             if (currentToken != Core.RPAREN) {
                 System.out.println("ERROR: Expected \"RPAREN\" token in Factor.java, got: " + currentToken.toString());
                 System.exit(0);
             }
+            scanner.nextToken();
         }
     }
 

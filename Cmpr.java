@@ -35,7 +35,13 @@ public class Cmpr {
     }
 
     void print() {
-        
+        exprLeft.print();
+        if (cmprType == compareType.EQUALS) {
+            System.out.print(" = ");
+        } else if (cmprType == compareType.LESSTHAN) {
+            System.out.print(" < ");
+        }
+        exprRight.print();
     }
 
 }

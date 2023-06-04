@@ -25,6 +25,8 @@ public class If {
             secondStmtSeq.parse(scanner);
         }
 
+        currentToken = scanner.currentToken();
+
         if (currentToken != Core.END) {
             System.out.println("ERROR: Expected \"END\" token in If.java, got: " + currentToken.toString());
             System.exit(0);
@@ -51,7 +53,7 @@ public class If {
                 System.out.print("\t");
             }
             System.out.println("else");
-            secondStmtSeq.print(numOfIndentations);
+            secondStmtSeq.print(numOfIndentations + 1);
         }
         for (int i = 0; i < numOfIndentations; i++) {
             System.out.print("\t");

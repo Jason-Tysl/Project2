@@ -34,7 +34,14 @@ public class Term {
     }
 
     void print() {
-        
+        factor.print();
+        if (trmType == termType.MULTIPLY) {
+            System.out.print(" * ");
+            term.print();
+        } else if (trmType == termType.DIVIDE) {
+            System.out.print(" / ");
+            term.print();
+        }
     }
 
 }
